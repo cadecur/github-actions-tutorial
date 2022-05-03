@@ -9,10 +9,10 @@ jobs:
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2 #get code onto vm (ubuntu-latest)
+      - uses: actions/setup-node@v1 #setup nodeJS
         with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+          node-version: 12 #specify nodeJS version
+      - run: npm ci #install dependences (clean install for ci server)
+      - run: npm test #test command
+      - run: npm run build #check if build compiles correctly
